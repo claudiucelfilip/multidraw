@@ -1,16 +1,17 @@
 (function() {
-    let drawer = new Drawer('canvas', 32);
+    let drawer = new Drawer('canvas', 128);
     let mouse = new Mouse();
 
 
     mouse.onMove((pressed, x, y) => {
         if (pressed) {
             drawer.fullOp();
-            drawer.drawSquares(x, y);
+
         } else {
-            // drawer.partialOp();
-            drawer.reset();
+            drawer.partialOp();
+
         }
+        drawer.drawSquares(x, y);
 
     });
 
